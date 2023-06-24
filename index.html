@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Questionário</title>
+    <title >Questionário</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="start-screen">
-            <h1 class="heading">Questionário</h1>
+<body onload="mostrarPagina('inicial-page')">
+    <div class="container" >
+    <div class="start-screen" >
+        <div class="question-page" id="inicial-page">
+            <h1 class="heading" onclick="mostrarPagina">Questionário</h1>
+            <p class="main-text">
+                Bem-vindo ao nosso questionário de rastreamento metabólico! Você já se perguntou como seu corpo processa diferentes alimentos e nutrientes? O rastreamento metabólico é uma ferramenta poderosa para avaliar a saúde e o funcionamento do seu metabolismo. Com este questionário, você poderá obter uma visão única sobre o seu metabolismo e descobrir como ele pode afetar seu bem-estar geral.
+            </p>
+                <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('neuromuscular-page')">Começar</button>
+        </div>
+        <div class="question-page" id="neuromuscular-page">
+            
 
             <!-- Tópico: Sistema Neuromuscular e Linfático -->
-            <h2 class="topic-heading">Sistema Neuromuscular e Linfático</h2>
+            <h2 class="heading">Sistema Neuromuscular e Linfático</h2>
             <label for="question1">Dores musculares:</label>
             <select name="question1" id="question1">
                 <option value="0">Nunca ou quase nunca</option>
@@ -88,8 +97,14 @@
                 <option value="4">Sintoma recorrente</option>
             </select>
 
-            <!-- Tópico: Articulações -->
-            <h2 class="topic-heading">Articulações</h2>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('articular-page')">Próximo</button>
+        </div>
+
+
+        <!-- Tópico: Articulações -->
+        <div class="question-page" id="articular-page">
+            <h2 class="heading">Articulações</h2>
             <label for="question10">Artrite:</label>
             <select name="question10" id="question10">
                 <option value="0">Nunca ou quase nunca</option>
@@ -138,8 +153,14 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
-            <!-- Tópico: Boca -->
-            <h2 class="topic-heading">Boca</h2>
+            <!-- Página Anterior -->
+            <button class="btn previous" onclick="mostrarPagina('neuromuscular-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('boca-page')">Próximo</button>
+        </div>
+        <!-- Tópico: Boca -->
+        <div class="question-page" id="boca-page">
+            <h2 class="heading">Boca</h2>
             <label for="question13">Halitose:</label>
             <select name="question13" id="question13">
                 <option value="0">Nunca ou quase nunca</option>
@@ -172,8 +193,16 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
+            <!-- Página Anterior -->
+            <button class="btn previous" onclick="mostrarPagina('articular-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('respiratorio-page')">Próximo</button>
+        </div>
+
+
             <!-- Tópico: Sistema Respiratório -->
-            <h2 class="topic-heading">Sistema Respiratório</h2>
+            <div class="question-page" id="respiratorio-page">
+            <h2 class="heading">Sistema Respiratório</h2>
             <label for="question17">Corrimento nasal:</label>
             <select name="question17" id="question17">
                 <option value="0">Nunca ou quase nunca</option>
@@ -222,8 +251,15 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
+            <button class="btn previous" onclick="mostrarPagina('boca-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('imunologico-page')">Próximo</button>
+        </div>
+
+
             <!-- Tópico: Sistema Imunológico -->
-            <h2 class="topic-heading">Sistema Imunológico</h2>
+            <div class="question-page" id="imunologico-page">
+            <h2 class="heading">Sistema Imunológico</h2>
             <label for="question23">Baixa imunidade:</label>
             <select name="question23" id="question23">
                 <option value="0">Nunca ou quase nunca</option>
@@ -240,8 +276,13 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
+            <button class="btn previous" onclick="mostrarPagina('respiratorio-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('gastro-page')">Próximo</button>
+        </div>
             <!-- Tópico: Sistema Gastrointestinal -->
-            <h2 class="topic-heading">Sistema Gastrointestinal</h2>
+            <div class="question-page" id="gastro-page">
+            <h2 class="heading">Sistema Gastrointestinal</h2>
             <label for="question25">Azia:</label>
             <select name="question25" id="question25">
                 <option value="0">Nunca ou quase nunca</option>
@@ -314,9 +355,14 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
+            <button class="btn previous" onclick="mostrarPagina('respiratorio-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class="btn next" onclick="mostrarPagina('menstrual-page')">Próximo</button>
+        </div>
 
             <!-- Tópico: Ciclo Menstrual -->
-            <h2 class="topic-heading">Ciclo Menstrual</h2>
+            <div class="question-page" id="menstrual-page">
+            <h2 class="heading">Ciclo Menstrual</h2>
             <label for="question34">Regularidade do ciclo:</label>
             <select name="question34" id="question34">
                 <option value="0">Nunca ou quase nunca</option>
@@ -373,10 +419,21 @@
                 <option value="3">Ocasionalmente teve, foi grave</option>
                 <option value="4">Sintoma recorrente</option>
             </select>
+            <button class="btn previous" onclick="mostrarPagina('gastro-page')">Anterior</button>
+            <!-- Próxima Página -->
+            <button class=" btn start">Enviar</button>
+         </div>
+         <div class="question-page" id="resultado-page">
+            <h2 class="heading">Resultado</h2>
+
+         </div>
+
+         
+        </div>
             <!-- Adicione os outros tópicos e perguntas semelhantes aqui -->
 
-        </div>
-        <button class=" btn start">Enviar</button>
+        
+        
     </div>
 
     <script src="./script.js"></script>

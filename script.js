@@ -25,10 +25,31 @@ function calcularResultado() {
   function enviarFormulario(event) {
     event.preventDefault();
     var resultado = calcularResultado();
-    console.log(resultado); // Exemplo: Exibir o resultado no console, mas você pode fazer algo diferente, como mostrar em uma div na página.
+    var divResultado = document.getElementById('resultado-page');
+    divResultado.innerHTML = '<div class="heading">Resultado</div> <div class="main-text">' + resultado + '</div>';
+    mostrarPagina('resultado-page')
   }
+  
   
   // Associar a função de envio do formulário ao evento de clique do botão
   var btnEnviar = document.querySelector('.btn.start');
   btnEnviar.addEventListener('click', enviarFormulario);
+
+  function mostrarPagina(id) {
+    // Oculta todas as páginas
+    var paginas = document.getElementsByClassName('question-page');
+    for (var i = 0; i < paginas.length; i++) {
+      paginas[i].style.display = 'none';
+    }
+    console.log('alo')
   
+    // Exibe a página especificada pelo ID
+    var pagina = document.getElementById(id);
+    if(pagina){
+    pagina.style.display = 'block';
+    }
+   
+  }
+
+var container = document.querySelectorAll('.question-page');
+container.classList.add('show');
