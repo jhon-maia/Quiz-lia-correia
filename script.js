@@ -11,13 +11,13 @@ function calcularResultado() {
   
     // Exibir o resultado com base na pontuação total
     if (totalPontos < 20) {
-      return "Você está saudável.";
+      return "Você está saudável, você apresenta quase nenhum sintoma de hipersensibilidade.";
     } else if (totalPontos > 30 && totalPontos <= 40) {
-      return "Indicativo de hipersensibilidade.";
+      return "Indicativo de hipersensibilidade, é bom marcar uma consulta conosco para um tratamento e acompanhamento adequados.";
     } else if (totalPontos > 40 && totalPontos < 100) {
-      return "Absoluta certeza de hipersensibilidade.";
+      return "Absoluta certeza de hipersensibilidade, seus sintomas apontam para uma presença alarmante para hipersensibilidade me su organismo, marque uma consulta conosco para iniciar o tratamento.";
     } else if (totalPontos >= 100) {
-      return "Sua saúde está ruim.";
+      return "Sua saúde está ruim, a hipersensibilidade afeta muito sua sáude e atividades diárias, marque uma consulta conosco para resolver tal problema.";
     }
   }
   
@@ -26,7 +26,7 @@ function calcularResultado() {
     event.preventDefault();
     var resultado = calcularResultado();
     var divResultado = document.getElementById('resultado-page');
-    divResultado.innerHTML = '<div class="heading">Resultado</div> <div class="main-text">' + resultado + '</div>';
+    divResultado.innerHTML = '<div class="heading">Resultado</div> <div class="main-text">' + resultado + '</div>'+ '<a href="https://liacorreia.carrd.co/" class="btn-return">voltar para o site</a>' ;
     mostrarPagina('resultado-page')
   }
   
@@ -51,5 +51,3 @@ function calcularResultado() {
    
   }
 
-var container = document.querySelectorAll('.question-page');
-container.classList.add('show');
