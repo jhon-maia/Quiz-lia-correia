@@ -51,3 +51,4 @@ function calcularResultado() {
    
   }
 
+var num=1;
